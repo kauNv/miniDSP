@@ -8,7 +8,7 @@
 #include <stdio.h>
 #include <math.h>
 #include "minidsp.h"
-#include "gnuplot_i.h"
+//#include "gnuplot_i.h"
 
 /**
  * A simple function to rotate a vector of doubles by a given amount.
@@ -46,7 +46,7 @@ int main()
 
   /* Compute GCC-PHAT. The GCC-PHAT values at different lags will go into lagvals[] */
   unsigned margin = 50;
-  int delay = MD_get_delay(siga, sigb, nsamps, margin, PHAT); /* SIMP or PHAT */
+  int delay = MD_get_delay(siga, sigb, nsamps, NULL, margin, PHAT); /* SIMP or PHAT */
 
   printf("delay: %d, expected %d\n",delay,true_delay);
 

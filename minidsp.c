@@ -28,6 +28,7 @@
  */
 #include "minidsp.h"
 
+
 static unsigned      _N = 0;        /**< size of input vector */
 static double* siga_loc = NULL;     /**< local copy of input A */
 static double* sigb_loc = NULL;     /**< local copy of input B */
@@ -54,6 +55,11 @@ void _xcorr_free() {
   if (xcorr)    free(xcorr);
   if (sigb_loc) free(sigb_loc);
   if (siga_loc) free(siga_loc);
+}
+
+fftw_complex* fftw_alloc_complex(int n)
+{
+  return (fftw_complex *)fftw_malloc(sizeof(fftw_complex) * n);
 }
 
 /**

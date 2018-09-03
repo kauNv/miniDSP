@@ -13,7 +13,8 @@
 #include <math.h>
 #include <float.h>
 #include <complex.h>
-#include <fftw3.h>
+//#include <fftw3.h>
+#include <cufftw.h>
 
 double MD_dot(const double* const a, const double* const b, const unsigned N);
 
